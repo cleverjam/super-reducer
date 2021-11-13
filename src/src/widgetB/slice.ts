@@ -20,7 +20,7 @@ const getIsLoading = (state: State) => {
 };
 
 export default createSlice<State>({
-  id: "widgetA",
+  id: "widgetB",
   reducer,
   selectors: { getIsLoading },
 });

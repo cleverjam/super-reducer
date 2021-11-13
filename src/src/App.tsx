@@ -9,6 +9,7 @@ function App() {
     <Provider store={store}>
       <h1>Data layer super reducer POC</h1>
       <WidgetA />
+      <hr />
       <WidgetB />
     </Provider>
   );
