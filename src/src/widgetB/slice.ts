@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import createSlice from "../data-layer/createSlice";
+import { createSlice } from "../data-layer";
 
 interface State {
   isLoading: boolean;

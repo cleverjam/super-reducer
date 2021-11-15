@@ -1,4 +1,5 @@
-import { combineReducers, createStore, Reducer } from "redux";
+import { combineReducers, createStore, Reducer, applyMiddleware } from "redux";
+import MiddlewareManager from "./middleware-manager";
 import * as global from "./reducers";
 import widgets from "./reducers/widgets";
 
@@ -13,12 +14,11 @@ const store = createStore(
   }),
   {},
   // @ts-ignore
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(MiddlewareManager)
 );
 
 // @ts-ignore
 export function injectWidgetReducer(widgetId: string, reducer: Reducer) {
-  console.log({ widgetId, widgetsData });
   if (!widgetsData[widgetId]) {
     widgetsData[widgetId] = reducer;
   } else {
@@ -43,5 +43,5 @@ export function injectWidgetReducer(widgetId: string, reducer: Reducer) {
 
   return store;
 }
-
+export function injectWidgetMiddlewares(middlewares = []) {}
 export default store;

@@ -1,4 +1,4 @@
-import DataProvider from "../data-layer/DataProvider";
+import { DataProvider } from "../data-layer";
 import slice from "./slice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,9 +9,7 @@ export default function WidgetA() {
     <DataProvider widgetId={slice.id} reducer={slice.reducer}>
       <h3>widget a</h3>
       <p>State:{isLoading.toString()}</p>
-      <button onClick={() => dispatch({ type: `${slice.id}/TOGGLE` })}>
-        START
-      </button>
+      <button onClick={() => dispatch({ type: "TOGGLE" })}>START</button>
     </DataProvider>
   );
 }

@@ -1,8 +1,8 @@
 import { AnyAction, Reducer } from "redux";
 
-type GlobalState<T> = { widgets: { [id: string]: T } };
-type GlobalSelector<T> = (state: GlobalState<T>) => any;
-type LocalSelector<T> = (state: T) => any;
+export type GlobalState<T = any> = { widgets: { [id: string]: T } };
+export type GlobalSelector<T> = (state: GlobalState<T>) => any;
+export type LocalSelector<T> = (state: T) => any;
 
 type Selectors<T> = Record<string, T>;
 
